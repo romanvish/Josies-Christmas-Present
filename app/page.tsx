@@ -29,14 +29,14 @@ const services = [
 
 const testimonials = [
   {
-    quote: "Fast, collaborative, and visuals that made our launch feel premium.",
-    name: "Jess M.",
-    role: "Marketing Lead, Northline",
+    quote: "Fast, collaborative, and visuals that made our vacation feel premium.",
+    name: "Katie J.",
+    role: "Health Coach, Revere Health",
   },
   {
     quote: "They captured the atmosphere exactly how we imagined it.",
-    name: "Evan R.",
-    role: "Founder, Aurora House",
+    name: "Jacqui D.",
+    role: "PhD Candidate, University of Utah",
   },
 ];
 
