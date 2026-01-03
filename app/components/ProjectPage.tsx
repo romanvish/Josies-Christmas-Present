@@ -12,6 +12,7 @@ type ProjectMedia = {
   kind?: "image" | "video"; // default image
   src: string;
   alt: string;
+  thumb?: string;
   caption?: string;
   poster?: string;
   loop?: boolean;
@@ -187,7 +188,7 @@ export function ProjectPage({ title, subtitle, summary, heroMedia, heroBackgroun
                 overflow: "hidden",
                 borderRadius: "16px",
                 border: "1px solid rgba(255, 255, 255, 0.05)",
-                backgroundColor: "rgba(255, 255, 255, 0.03)",
+                backgroundColor: "rgba(70, 40, 40, 0.03)",
                 boxShadow: "0 10px 15px -3px rgb(0 0 0 / 0.1)",
                 cursor: "pointer",
                 transition: "all 0.3s ease-out",
@@ -226,8 +227,10 @@ export function ProjectPage({ title, subtitle, summary, heroMedia, heroBackgroun
                   </video>
                 ) : (
                   <img
-                    src={img.src}
+                    src={img.thumb ?? img.src}
                     alt={img.alt}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: "100%",
                       height: "100%",
@@ -240,7 +243,7 @@ export function ProjectPage({ title, subtitle, summary, heroMedia, heroBackgroun
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform = "scale(1)";
                     }}
-                    loading="lazy"
+                    
                   />
                 )}
                 <Box
@@ -299,6 +302,7 @@ export function ProjectPage({ title, subtitle, summary, heroMedia, heroBackgroun
             >
               Close
             </button>
+            {/* //Lightbox Content */}
             <div className="flex h-full w-full items-center justify-center bg-black">
               {images[activeIndex].kind === "video" ? (
                 <video
